@@ -1,3 +1,4 @@
+// Link: https://www.youtube.com/watch?v=gIe543ufGmE  
 package main 
 
 import (
@@ -24,9 +25,17 @@ type Artist struct {
 
 var tracks []Track; 
 
+// Get All Tracks. 
 func getTracks(write http.ResponseWriter, read *http.Request) {
 	write.Header().Set("Content-Type", "application/json") 
 	json.NewEncoder(write).Encode(tracks)
+}
+
+// Get Single Track. 
+func getTrack(write http.ResponseWriter, read *http.Request) {
+	write.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(read) 
+	// Not finished. 
 }
 
 func main() {
